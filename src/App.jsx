@@ -7,6 +7,7 @@ import "./App.css";
 
 
 import Landing from "./pages/Landing/Landing";
+import MyTickets from "./pages/MyTickets";
 
 
 
@@ -38,6 +39,8 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Landing />} />
+            <Route path="MyTickets" element={<MyTickets />} />
+
           </Routes>
         </Router>
       </ThemeProvider>
