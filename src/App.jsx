@@ -4,7 +4,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import "./App.css";
 
-import Landing from "./pages/Landing";
+import Landing from "./forms/Register/index";
 
 const theme = createTheme({
   typography: {
