@@ -1,0 +1,52 @@
+.flight-info {
+    display: flex;
+    align-items: center;
+    background-color: #1A0841;
+    padding: 10px 20px;
+    border-radius: 10px;
+    color: white;
+    text-align: left;
+  }
+  
+  .airline-logo {
+    width: 50px;
+    height: auto;
+    margin-right: 15px;
+  }
+  
+  .flight-details {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .flight-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  .flight-route {
+    font-size: 18px;
+    font-weight: bold;
+  }
+  
+  .flight-tag {
+    background-color: #ff8000 !important;
+    color: rgb(0, 0, 0) !important;
+    font-weight: bold;
+    font-size: 14px;
+    border-radius: 20px;
+    
+  }
+  
+  .flight-date {
+    font-size: 14px;
+    color: #d1d1d1;
+  }
+  
+  .flight-seats {
+    font-size: 14px;
+    font-weight: bold;
+  }
+  
+  
