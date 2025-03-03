@@ -5,12 +5,9 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import "./App.css";
 
 
-import Login from "./forms/Login/Login";
-import UnRegisterNavBar from "./layouts/NoRegisterNavbar/UnRegisterNavBar";
-import NavBar from "./layouts/UserNavbar/NavBar";
+
 import Landing from "./pages/Landing/Landing";
-import PassengerForm from "./components/PassengerForm";
-import Payment from "./components/Payment";
+
 
 
 
@@ -41,7 +38,6 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Landing />} />
-            <Route path="/Payment" element={<Payment />} />
           </Routes>
         </Router>
       </ThemeProvider>

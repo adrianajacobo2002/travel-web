@@ -14,7 +14,7 @@ import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
 import MCicon from "../assets/img/mastercard_icon.svg";
 import VSicon from "../assets/img/visa_icon.svg";
 
-import PassengerForm from "./PassengerForm";
+import PassengerForm from "../components/PassengerForm";
 
 // Componente de Input personalizado con BootstrapInput
 const BootstrapInput = styled(InputBase)(({ theme }) => ({
