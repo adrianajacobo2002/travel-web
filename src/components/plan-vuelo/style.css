@@ -1,0 +1,76 @@
+.flight-card {
+    background-color: white;
+    border-radius: 20px;
+    margin:30px;
+    padding: 30px;
+    width: 290px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  .flight-title {
+    text-align: left;
+    color: #007b5e;
+    font-size: 30%;
+    font-weight: bold;
+  }
+  
+  .flight-subtitle {
+    text-align: left;
+    color: var(--celeste);
+    font-size: 10px;
+  }
+  
+  .flight-price {
+    text-align: left;
+    color: #007b5e;
+    font-size: 16px;
+    margin-top: 10px;
+  }
+  
+  .flight-price-bold {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .flight-benefits {
+    margin-top: 10px;
+    text-align: left;
+   
+  }
+  
+  .flight-benefit {
+    display: flex;
+    align-items: center;
+    margin: 5px 0;
+   
+  }
+  
+  .icon {
+    color: #007b5e;
+    margin-right: 5px;
+  }
+  
+  .text-link {
+    color: var(--celeste);
+    font-size: 14px;
+    text-decoration: none;
+  }
+  
+  .text-disabled {
+    color: #b0b0b0;
+    font-size: 14px;
+  }
+  
+  .flight-benefit.disabled .icon {
+    color: #b0b0b0;
+  }
+  
+  .flight-button {
+    background-color: #007b5e !important;
+    color: white !important;
+    margin-top: 10px !important;
+    border-radius: 20px !important;
+    padding: 8px 20px !important;
+    width: 100%;
+  }
+  
