@@ -2,13 +2,16 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { CssBaseline } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
+import "./App.css";
+
+
 import Login from "./forms/Login/Login";
 import UnRegisterNavBar from "./layouts/NoRegisterNavbar/UnRegisterNavBar";
 import NavBar from "./layouts/UserNavbar/NavBar";
+import Landing from "./pages/Landing/Landing";
 
-import "./App.css";
 
-import Landing from "./pages/Landing";
+
 
 const theme = createTheme({
   typography: {
@@ -36,7 +39,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Landing />} />
-            <Route path="/login" element={<Login />} />
+            <Route path="/landing" element={<Landing />} />
           </Routes>
         </Router>
       </ThemeProvider>
