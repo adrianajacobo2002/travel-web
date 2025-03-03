@@ -4,7 +4,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import "./App.css";
 
-import Landing from "./components/plan-vuelo/plan";
+import Landing from "./components/pasajeroform/formulario";
 
 const theme = createTheme({
   typography: {
