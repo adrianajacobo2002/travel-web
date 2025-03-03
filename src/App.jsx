@@ -3,6 +3,8 @@ import { CssBaseline } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import Login from "./forms/Login/Login";
+import UnRegisterNavBar from "./layouts/NoRegisterNavbar/UnRegisterNavBar";
+import NavBar from "./layouts/UserNavbar/NavBar";
 
 import "./App.css";
 

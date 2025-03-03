@@ -11,6 +11,7 @@ import CardMedia from "@mui/material/CardMedia";
 
 import avion from "../../assets/img/avion.png"; // Ruta del SVG
 
+
 const Login = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -31,6 +32,8 @@ const Login = () => {
   };
 
   return (
+    <>
+    
     <Container
       maxWidth="sm"
       sx={{
@@ -146,6 +149,7 @@ const Login = () => {
         </form>
       </Card>
     </Container>
+    </>
   );
 };
 
