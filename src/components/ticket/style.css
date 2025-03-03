@@ -1,0 +1,123 @@
+/* Contenedor principal */
+.ticket-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    
+  }
+  
+  /* Contenedor del ticket */
+  .ticket-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #fff;
+    border-radius: 20px;
+    padding: 1.5rem;
+    position: relative;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 600px;
+    height: 150px;
+  }
+  
+  /* Cortes del ticket */
+  .ticket-cut-left,
+  .ticket-cut-right {
+    position: absolute;
+    width: 70px;
+    height: 60px;
+    background-color: #1A0841;
+    border-radius: 50%;
+  }
+  
+  .ticket-cut-left {
+    left: 392px;
+    top: 2%;
+    transform: translateY(-80%);
+  }
+  
+  .ticket-cut-right {
+    right: 135px;
+    top: 102%;
+    transform: translateY(-30%);
+  }
+  
+  /* Línea punteada */
+  .dotted-line {
+    position: absolute;
+    top: 15%;
+    bottom: 15%;
+    left: 50%;
+    transform: translateX(127px);
+    width: 0px;
+    border-left: 1px dashed gray;
+  }
+  
+  /* Secciones del ticket */
+  .ticket-section-left {
+    text-align: left;
+    margin-right: -40px;
+    
+  }
+
+  .ticket-section-right{
+    margin-top: 35px;
+    margin-right: 50px;
+    text-align: left;
+  }
+  
+  /* Sección de la duración del vuelo */
+  .center {
+    text-align: center;
+    padding-top: 55px;
+    color: var(--azul);
+  }
+  
+  .top-line {
+    border-top: 2px solid var(--verde);
+    width: 110px;
+    margin: 0 auto 4px;
+    margin-left: 0px;
+    
+    
+  }
+  
+  /* Sección del precio */
+  .price-section {
+    text-align: center;
+    padding-left: 10px;
+    padding-right: 2px;
+    padding-top: 8px;
+  }
+  
+  /* Logo de la aerolínea */
+  .airline-logo {
+    width: 50px;
+    height: 50px;
+    margin-bottom: 10px;
+  }
+  
+  /* Texto del precio */
+  .price-text {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--celeste);
+  }
+  
+  .highlight-text{
+    margin-left: 20px;
+    font-weight: bold;
+    color: var(--verde);
+  }
+
+  .gray-text{
+    color: var(--gris);
+  }
+
+  .celeste-text{
+    font-weight: bold;
+    color: var(--celeste);
+    
+  }

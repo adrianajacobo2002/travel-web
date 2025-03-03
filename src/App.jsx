@@ -6,7 +6,7 @@ import Login from "./forms/Login/Login";
 
 import "./App.css";
 
-import Landing from "./forms/Register/index";
+import Landing from "./components/ticket/ticket";
 
 const theme = createTheme({
   typography: {
