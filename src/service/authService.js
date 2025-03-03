@@ -14,21 +14,23 @@ export const login = async (email, password) => {
   }
 };
 
-export const register = async (nombres, apellidos, email, password, dui) => {
-  try {
-    const response = await axios.post(`${API_URL}/register`, {
-      nombres,
-      apellidos,
-      email,
-      contrasena: password,
-      dui,
-    });
-    return response.data;
-  } catch (error) {
-    console.error("Error en el registro:", error);
-    throw error.response ? error.response.data.message : "Error al registrarse";
-  }
-};
+export const register = async (nombre, apellido, email, password, telefono) => {
+    try {
+      const response = await axios.post(`${API_URL}/register`, {
+        nombre, 
+        apellido, 
+        email,
+        telefono,
+        contrasena: password,
+        tipo_usuario: "cliente",
+      });
+      return response.data;
+    } catch (error) {
+      console.error("Error en el registro:", error);
+      throw error.response ? error.response.data.message : "Error al registrarse";
+    }
+  };
+  
 
 export const getUserInfo = async () => {
   try {
