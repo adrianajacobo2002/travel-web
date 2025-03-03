@@ -3,10 +3,8 @@ import { CssBaseline } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import Login from "./forms/Login/Login";
-
-import "./App.css";
-
 import Landing from "./components/pasajeroform/formulario";
+import Dashboard from "./pages/Dashboard"; // Importa el Dashboard
 
 const theme = createTheme({
   typography: {
@@ -28,17 +26,16 @@ const theme = createTheme({
 
 function App() {
   return (
-    <>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Router>
-          <Routes>
-            <Route path="/" element={<Landing />} />
-            <Route path="/login" element={<Login />} />
-          </Routes>
-        </Router>
-      </ThemeProvider>
-    </>
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      <Router>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/dashboard" element={<Dashboard />} /> {/* Nueva Ruta */}
+        </Routes>
+      </Router>
+    </ThemeProvider>
   );
 }
 
