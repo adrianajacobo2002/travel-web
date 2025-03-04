@@ -1,0 +1,148 @@
+/* Contenedor principal de la búsqueda de vuelos */
+.flight-search-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw; /* Ocupar todo el ancho de la ventana */
+  height: 100vh; /* Ocupar toda la altura de la pantalla */
+  padding: 20px;
+  color: white;
+  box-sizing: border-box; /* Evita que el padding afecte el tamaño */
+  /* Distribuye los elementos */
+}
+
+/* Controles de búsqueda (dropdowns y búsqueda) */
+.search-controls {
+  display: flex;
+  gap: 30px;
+  justify-content: space-between; /* Asegura que los elementos se repartan */
+  width: 100%;
+  /* Para que no se desborde en pantallas pequeñas */
+}
+
+.input-box {
+  background-color: white;
+  border-radius: 10px;
+}
+
+/* Botón de búsqueda */
+.search-button {
+  background-color: rgb(201, 201, 50) !important;
+  color: white;
+  filter: invert(1);
+  padding: 10px 20px !important;
+  font-size: 14px !important;
+  border-radius: 15px !important;
+}
+
+/* Contenedor de filtros y tickets */
+.content-container {
+  display: flex;
+  width: 100%;
+  flex-grow: 1; /* Permite que crezca hasta llenar el espacio */
+  gap: 20px;
+}
+
+/* Contenedor de filtros */
+.filters-container {
+  text-align: left;
+  background-color: transparent;
+  margin-top: 30px;
+  padding: 30px;
+  border: 1px solid white;
+  border-radius: 10px;
+  width: 260px;
+  flex-shrink: 0;
+}
+
+.filter-title {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+.filter-subtitle {
+  font-size: 16px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+/* Contenedor de los tickets */
+.tickets-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+/* Estilo para los checkboxes con borde blanco */
+.checkbox-custom .MuiSvgIcon-root {
+  color: white !important;
+  border-radius: 3px;
+}
+
+/* Cambia el color del check cuando está seleccionado */
+.checkbox-custom .Mui-checked {
+  color: #007bff !important;
+}
+
+
+/*-----------------------Dropdowns--------------------------*/
+/* Controles superiores (dropdowns de viaje, pasajeros y clase) */
+.top-controls {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+/* Dropdowns de Viaje, Pasajeros y Clase */
+.dropdown {
+  background: transparent !important;
+  color: white !important;
+  font-weight: bold !important;
+  padding: 5px 10px !important;
+  width: auto !important;
+  height: 56px !important;
+  border: none !important; /* Quita el borde */
+  box-shadow: none !important; /* Quita el borde negro */
+  outline: none !important; /* Evita que aparezca el contorno al seleccionar */
+  text-align: left !important;
+}
+
+/* Ícono del desplegable */
+.MuiSelect-icon {
+  color: #ffffff !important;
+  border: none !important;
+  outline: none !important;
+}
+
+/* Asegura que el contenedor no tenga bordes */
+.MuiOutlinedInput-notchedOutline {
+  border: none !important; /* Eliminar borde del contorno */
+}
+
+/* Cuando el dropdown está enfocado */
+.dropdown:focus {
+  border: none !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
+
+/* Cuando el dropdown está activo */
+.dropdown:active {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+/* Cuando se pasa el mouse */
+.dropdown:hover {
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.cambio {
+ color: #ffffff !important;
+ font-size: 30px;
+ margin-top: 10px;
+  
+}
