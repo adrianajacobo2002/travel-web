@@ -11,6 +11,7 @@ import {
 } from "@mui/material";
 import { styled } from "@mui/material/styles";
 import { login } from "../../service/authService";
+import { useAuth } from "../../context/AuthContext"; // ✅ Importamos el contexto
 
 // Estilos personalizados
 const CustomPaper = styled(Paper)({
@@ -41,6 +42,7 @@ const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
   const [error, setError] = useState("");
   const navigate = useNavigate();
+  const { setUser } = useAuth(); // ✅ Obtenemos setUser del contexto
 
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -53,6 +55,10 @@ const Login = () => {
     try {
       const data = await login(formData.email, formData.password);
       console.log("Login exitoso:", data);
+
+      // ✅ Guardamos el usuario en el contexto para actualizar la navbar
+      setUser({ nombre: data.nombre, apellido: data.apellido });
+
       navigate("/dashboard");
     } catch (err) {
       setError(err || "Error al iniciar sesión. Inténtalo de nuevo.");

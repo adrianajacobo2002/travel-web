@@ -1,44 +1,44 @@
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { CssBaseline } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { AuthProvider, useAuth } from "./context/AuthContext";
 
 import Login from "./forms/Login/Login";
-import Register from "./forms/Register"; // Importa el registro
+import Register from "./forms/Register";
 import Landing from "./pages/Landing";
-import Dashboard from "./pages/Dashboard"; 
+import Dashboard from "./pages/Dashboard";
+
+import NavBar from "./layouts/UserNavbar/index";
+import UnRegisterNavBar from "./layouts/NoRegisterNavbar/index";
 
 const theme = createTheme({
-  typography: {
-    fontFamily: "Nunito, sans-serif",
-    h1: { fontFamily: "Poppins, sans-serif" },
-    h2: { fontFamily: "Poppins, sans-serif" },
-    h3: { fontFamily: "Poppins, sans-serif" },
-    h4: { fontFamily: "Poppins, sans-serif" },
-    h5: { fontFamily: "Poppins, sans-serif" },
-    h6: { fontFamily: "Poppins, sans-serif" },
-  },
-  palette: {
-    background: {
-      default: "#1f0648",
-    },
-    text: {},
-  },
+  typography: { fontFamily: "Nunito, sans-serif" },
+  palette: { background: { default: "#1f0648" } },
 });
 
 function App() {
   return (
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <Router>
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/register" element={<Register />} /> {/* Nueva ruta de registro */}
-          <Route path="/dashboard" element={<Dashboard />} />
-        </Routes>
-      </Router>
-    </ThemeProvider>
+    <AuthProvider>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <Router>
+          <NavbarWrapper /> {/* ✅ Navbar siempre visible y se actualiza con el estado */}
+          <Routes>
+            <Route path="/" element={<Landing />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/register" element={<Register />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Routes>
+        </Router>
+      </ThemeProvider>
+    </AuthProvider>
   );
 }
+
+// ✅ Cambia dinámicamente la navbar cuando cambia el usuario
+const NavbarWrapper = () => {
+  const { user } = useAuth();
+  return user ? <NavBar /> : <UnRegisterNavBar />;
+};
 
 export default App;
