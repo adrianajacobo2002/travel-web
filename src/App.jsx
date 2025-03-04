@@ -7,9 +7,7 @@ import "./App.css";
 
 
 import Landing from "./pages/Landing/Landing";
-import MyTickets from "./pages/MyTickets";
-
-
+import SelectedFlight from"./pages/SelectedFlight";
 
 
 
@@ -39,7 +37,7 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Landing />} />
-            <Route path="MyTickets" element={<MyTickets />} />
+            <Route path="SelectedFlight" element={<SelectedFlight />} />
 
           </Routes>
         </Router>
