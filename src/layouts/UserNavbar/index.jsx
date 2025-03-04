@@ -11,7 +11,7 @@ import {
 } from "@mui/material";
 import { AccountCircle } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
-import { useAuth } from "../../context/AuthContext"; // Importar autenticación
+import { useAuth } from "../../context/AuthContext"; // Asegúrate de que el AuthContext esté correctamente configurado
 
 const NavBar = () => {
   const navigate = useNavigate();
@@ -26,9 +26,15 @@ const NavBar = () => {
     setAnchorEl(null);
   };
 
+  // Cierra la sesión y navega a "/login"
   const handleLogout = () => {
     logout();
     navigate("/login");
+  };
+
+  // Navega a "My Tickets" sin cerrar sesión
+  const handleMyTickets = () => {
+    navigate("/my-tickets");
   };
 
   return (
@@ -36,7 +42,7 @@ const NavBar = () => {
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
         <Typography
           variant="h6"
-          sx={{ fontWeight: "bold", cursor: "pointer" }}
+          sx={{ fontWeight: "bold", cursor: "pointer", color: "#1f0648" }}
           onClick={() => navigate("/")}
         >
           SkyFare
@@ -59,7 +65,7 @@ const NavBar = () => {
             <AccountCircle sx={{ color: "#1f0648" }} />
           </IconButton>
           <Typography
-            sx={{ fontWeight: "bold", cursor: "pointer" }}
+            sx={{ fontWeight: "bold", cursor: "pointer", color: "#1f0648" }}
             onClick={handleMenuOpen}
           >
             {user ? `${user.nombre} ${user.apellido}` : "Usuario"}
@@ -73,6 +79,7 @@ const NavBar = () => {
             transformOrigin={{ vertical: "top", horizontal: "right" }}
           >
             <MenuItem onClick={handleLogout}>Cerrar Sesión</MenuItem>
+            <MenuItem onClick={handleMyTickets}>My Tickets</MenuItem>
           </Menu>
         </Box>
       </Toolbar>

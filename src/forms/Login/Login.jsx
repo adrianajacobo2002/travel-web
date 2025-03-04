@@ -12,6 +12,8 @@ import {
 import { styled } from "@mui/material/styles";
 import { login } from "../../service/authService";
 import { useAuth } from "../../context/AuthContext"; // ✅ Importamos el contexto
+import { getUserInfo } from "../../service/authService";
+
 
 // Estilos personalizados
 const CustomPaper = styled(Paper)({
@@ -51,19 +53,21 @@ const Login = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setError("");
-
+  
     try {
       const data = await login(formData.email, formData.password);
       console.log("Login exitoso:", data);
-
-      // ✅ Guardamos el usuario en el contexto para actualizar la navbar
-      setUser({ nombre: data.nombre, apellido: data.apellido });
-
+  
+      // Llamamos a getUserInfo para obtener el perfil completo del usuario
+      const userInfo = await getUserInfo();
+      setUser(userInfo);
+  
       navigate("/dashboard");
     } catch (err) {
       setError(err || "Error al iniciar sesión. Inténtalo de nuevo.");
     }
   };
+  
 
   return (
     <Box

@@ -10,6 +10,7 @@ import Dashboard from "./pages/Dashboard";
 import FlightSearchPage from "./pages/VIajes";
 import NavBar from "./layouts/UserNavbar/index";
 import UnRegisterNavBar from "./layouts/NoRegisterNavbar/index";
+import MyTickets from "./pages/MyTickets/index";
 
 const theme = createTheme({
   typography: { fontFamily: "Nunito, sans-serif" },
@@ -29,6 +30,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/search" element={<FlightSearchPage />} />
+            <Route path="/my-tickets" element={<MyTickets />} />
           </Routes>
         </Router>
       </ThemeProvider>
