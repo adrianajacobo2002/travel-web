@@ -63,11 +63,11 @@ const Login = () => {
     <Box
       sx={{
         minHeight: "100vh",
-        width: "100vw", // ✅ Asegura que ocupe todo el ancho de la pantalla
+        width: "100vw",
         display: "flex",
-        justifyContent: "center", // ✅ Centra horizontalmente
-        alignItems: "center", // ✅ Centra verticalmente
-        backgroundColor: "#1f0648", // ✅ Asegura que el fondo se aplique en toda la pantalla
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#1f0648",
       }}
     >
       <Container maxWidth="sm">

@@ -4,7 +4,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import Login from "./forms/Login/Login";
 import Register from "./forms/Register"; // Importa el registro
-import Landing from "./components/pasajeroform/formulario";
+import Landing from "./pages/Landing";
 import Dashboard from "./pages/Dashboard"; 
 
 const theme = createTheme({
