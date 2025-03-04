@@ -7,7 +7,7 @@ import Login from "./forms/Login/Login";
 import Register from "./forms/Register";
 import Landing from "./pages/Landing";
 import Dashboard from "./pages/Dashboard";
-
+import FlightSearchPage from "./pages/VIajes";
 import NavBar from "./layouts/UserNavbar/index";
 import UnRegisterNavBar from "./layouts/NoRegisterNavbar/index";
 
@@ -28,6 +28,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/register" element={<Register />} />
             <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/search" element={<FlightSearchPage />} />
           </Routes>
         </Router>
       </ThemeProvider>
@@ -35,7 +36,6 @@ function App() {
   );
 }
 
-// ✅ Cambia dinámicamente la navbar cuando cambia el usuario
 const NavbarWrapper = () => {
   const { user } = useAuth();
   return user ? <NavBar /> : <UnRegisterNavBar />;

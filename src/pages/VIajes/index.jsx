@@ -13,7 +13,7 @@ import {
 } from "@mui/material";
 import { LocationOn } from "@mui/icons-material";
 
-import FlightDatePicker from "../../components/calendario/calendario";
+import FlightDatePicker from "../../components/Calendario/index";
 import CompareArrowsIcon from "@mui/icons-material/CompareArrows";
 
 import "./style.css";
@@ -33,6 +33,7 @@ const FlightSearchPage = () => {
         height: "100vh",
         padding: "20px",
         color: "white",
+        marginTop: "10%",
       }}
     >
       {/* Controles superiores (dropdowns) */}
@@ -73,17 +74,14 @@ const FlightSearchPage = () => {
           <MenuItem value="one-way">Viaje Sencillo</MenuItem>
         </Select>
 
-        {/* Dropdown de Pasajeros */}
+        {/* Dropdown de Pasajeros (solo con "1" preestablecido) */}
         <Select
-          value={passengers}
-          onChange={(e) => setPassengers(e.target.value)}
+          value={1}
+          onChange={() => {}}
           className="dropdown"
+          sx = {{color: "white"}}
         >
-          {[...Array(10).keys()].map((num) => (
-            <MenuItem key={num + 1} value={num + 1}>
-              {num + 1} Pasajero{num + 1 > 1 ? "s" : ""}
-            </MenuItem>
-          ))}
+          <MenuItem value={1}>1 Pasajero</MenuItem>
         </Select>
 
         {/* Dropdown de Clase de Viaje */}

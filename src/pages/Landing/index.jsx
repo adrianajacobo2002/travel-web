@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import {
   Box,
   Typography,
@@ -16,6 +17,12 @@ import Curve1 from "../../assets/img/curve1.png";
 import Curve2 from "../../assets/img/curve2.png";
 
 const Landing = () => {
+  const navigate = useNavigate();
+
+  const handleSearch = () => {
+    navigate("/search");
+  };
+
   const [formData, setFormData] = useState({
     from: "",
     to: "",
@@ -80,7 +87,13 @@ const Landing = () => {
         }}
       >
         {/* Sección de texto */}
-        <Box sx={{ flex: 1, textAlign: { xs: "center", md: "left" }, marginTop: 15 }}>
+        <Box
+          sx={{
+            flex: 1,
+            textAlign: { xs: "center", md: "left" },
+            marginTop: 15,
+          }}
+        >
           <Typography
             variant="h1"
             sx={{
@@ -123,12 +136,44 @@ const Landing = () => {
       >
         {/* Campos del formulario con separadores */}
         {[
-          { label: "FROM", name: "from", type: "text", placeholder: "City or Country" },
-          { label: "TO", name: "to", type: "text", placeholder: "City or Country" },
-          { label: "ARRIVAL", name: "arrival", type: "date", placeholder: "Select date" },
-          { label: "DEPARTURE", name: "departure", type: "date", placeholder: "Select date" },
-          { label: "PASSENGERS", name: "passengers", type: "select", options: [1, 2, 3, 4, 5, 6], placeholder: "Select" },
-          { label: "CLASS", name: "class", type: "select", options: ["Economy", "Standard", "Premium"], placeholder: "Select" },
+          {
+            label: "FROM",
+            name: "from",
+            type: "text",
+            placeholder: "City or Country",
+          },
+          {
+            label: "TO",
+            name: "to",
+            type: "text",
+            placeholder: "City or Country",
+          },
+          {
+            label: "ARRIVAL",
+            name: "arrival",
+            type: "date",
+            placeholder: "Select date",
+          },
+          {
+            label: "DEPARTURE",
+            name: "departure",
+            type: "date",
+            placeholder: "Select date",
+          },
+          {
+            label: "PASSENGERS",
+            name: "passengers",
+            type: "select",
+            options: [1, 2, 3, 4, 5, 6],
+            placeholder: "Select",
+          },
+          {
+            label: "CLASS",
+            name: "class",
+            type: "select",
+            options: ["Economy", "Standard", "Premium"],
+            placeholder: "Select",
+          },
         ].map((field, index) => (
           <Box
             key={index}
@@ -249,6 +294,7 @@ const Landing = () => {
 
       {/* Botón de búsqueda */}
       <Button
+        onClick={handleSearch}
         fullWidth
         sx={{
           backgroundColor: "#29299a",
@@ -260,7 +306,7 @@ const Landing = () => {
           textTransform: "none",
           maxWidth: "1200px",
           width: "100%",
-          transform: "none"
+          transform: "none",
         }}
       >
         Buscar Vuelo
