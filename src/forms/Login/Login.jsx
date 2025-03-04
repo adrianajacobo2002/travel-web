@@ -1,14 +1,41 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { login } from "../../service/authService"; // Importa el servicio
-import Container from "@mui/material/Container";
-import Card from "@mui/material/Card";
-import CardContent from "@mui/material/CardContent";
-import Button from "@mui/material/Button";
-import Typography from "@mui/material/Typography";
-import TextField from "@mui/material/TextField";
-import CardMedia from "@mui/material/CardMedia";
-import avion from "../../assets/img/avion.png"; 
+import {
+  TextField,
+  Button,
+  Typography,
+  Box,
+  Container,
+  Paper,
+  Link,
+} from "@mui/material";
+import { styled } from "@mui/material/styles";
+import { login } from "../../service/authService";
+
+// Estilos personalizados
+const CustomPaper = styled(Paper)({
+  padding: "2rem",
+  display: "flex",
+  flexDirection: "column",
+  alignItems: "center",
+  borderRadius: "12px",
+  boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+});
+
+const CustomTextField = styled(TextField)({
+  "& .MuiOutlinedInput-root": {
+    borderRadius: "12px",
+    "& fieldset": {
+      borderColor: "#ccc",
+    },
+    "&:hover fieldset": {
+      borderColor: "#999",
+    },
+    "&.Mui-focused fieldset": {
+      borderColor: "#24107D",
+    },
+  },
+});
 
 const Login = () => {
   const [formData, setFormData] = useState({ email: "", password: "" });
@@ -21,38 +48,100 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setError(""); // Limpia errores previos
+    setError("");
 
     try {
       const data = await login(formData.email, formData.password);
       console.log("Login exitoso:", data);
-      navigate("/dashboard"); // Redirige tras el login
+      navigate("/dashboard");
     } catch (err) {
       setError(err || "Error al iniciar sesión. Inténtalo de nuevo.");
     }
   };
 
   return (
-    <Container maxWidth="sm" sx={{ display: "flex", justifyContent: "center", minHeight: "100vh", alignItems: "center" }}>
-      <Card sx={{ padding: 4, borderRadius: 5, textAlign: "center", width: "100%" }}>
-        <Typography variant="h5" sx={{ fontWeight: "bold", mb: 2, color: "#1f0648" }}>¡Bienvenido a <br /> SkyFare!</Typography>
-        <CardMedia component="img" image={avion} alt="Avión" sx={{ maxWidth: "20%", height: "auto", margin: "0 auto", mb: 2 }} />
-        
-        <form onSubmit={handleSubmit}>
-          <CardContent sx={{ textAlign: "left" }}>
-            <Typography variant="subtitle2" sx={{ fontWeight: "bold", mb: 0.5, color: "#1f0648", fontSize: "16px" }}>EMAIL</Typography>
-            <TextField fullWidth id="email" label="Email" variant="outlined" type="email" name="email" value={formData.email} onChange={handleChange} sx={{ mb: 2 }} />
-            
-            <Typography variant="subtitle2" sx={{ fontWeight: "bold", mt: 2, mb: 0.5, color: "#1f0648", fontSize: "16px" }}>PASSWORD</Typography>
-            <TextField fullWidth id="password" label="Password" variant="outlined" type="password" name="password" value={formData.password} onChange={handleChange} />
-          </CardContent>
+    <Box
+      sx={{
+        minHeight: "100vh",
+        width: "100vw", // ✅ Asegura que ocupe todo el ancho de la pantalla
+        display: "flex",
+        justifyContent: "center", // ✅ Centra horizontalmente
+        alignItems: "center", // ✅ Centra verticalmente
+        backgroundColor: "#1f0648", // ✅ Asegura que el fondo se aplique en toda la pantalla
+      }}
+    >
+      <Container maxWidth="sm">
+        <CustomPaper>
+          <Typography
+            variant="h5"
+            fontWeight="bold"
+            color="#29299a"
+            gutterBottom
+          >
+            ¡Bienvenido a <span style={{ color: "#29299a" }}>SkyFare!</span>
+          </Typography>
 
-          {error && <Typography color="error" sx={{ mt: 2 }}>{error}</Typography>}
+          <Box
+            component="form"
+            onSubmit={handleSubmit}
+            sx={{ width: "100%", mt: 3, borderRadius: "8px" }}
+          >
+            <CustomTextField
+              label="Email"
+              name="email"
+              type="email"
+              fullWidth
+              margin="normal"
+              value={formData.email}
+              onChange={handleChange}
+              required
+              sx={{ fontFamily: "Nunito, sans-serif" }}
+            />
+            <CustomTextField
+              label="Contraseña"
+              name="password"
+              type="password"
+              fullWidth
+              margin="normal"
+              value={formData.password}
+              onChange={handleChange}
+              required
+              sx={{ fontFamily: "Nunito, sans-serif" }}
+            />
 
-          <Button type="submit" variant="contained" fullWidth sx={{ mt: 2, backgroundColor: "#1f0648", "&:hover": { backgroundColor: "#150336" }, borderRadius: "20px" }}>Iniciar Sesión</Button>
-        </form>
-      </Card>
-    </Container>
+            {error && (
+              <Typography color="error" sx={{ mt: 2 }}>
+                {error}
+              </Typography>
+            )}
+
+            <Box sx={{ textAlign: "center", mt: 2 }}>
+              <Typography variant="body2">
+                ¿No tienes una cuenta?{" "}
+                <Link href="/register" color="#29299a">
+                  Regístrate
+                </Link>
+              </Typography>
+            </Box>
+
+            <Button
+              type="submit"
+              variant="contained"
+              fullWidth
+              sx={{
+                mt: 3,
+                backgroundColor: "#29299a",
+                borderRadius: "8px",
+                fontFamily: "Nunito, sans-serif",
+                textTransform: "none",
+              }}
+            >
+              Iniciar Sesión
+            </Button>
+          </Box>
+        </CustomPaper>
+      </Container>
+    </Box>
   );
 };
 
