@@ -34,20 +34,34 @@ const NavBar = () => {
   return (
     <AppBar position="fixed" elevation={0} sx={{ backgroundColor: "white" }}>
       <Toolbar sx={{ display: "flex", justifyContent: "space-between" }}>
-        <Typography variant="h6" sx={{ fontWeight: "bold", cursor: "pointer" }} onClick={() => navigate("/Landing")}>
+        <Typography
+          variant="h6"
+          sx={{ fontWeight: "bold", cursor: "pointer" }}
+          onClick={() => navigate("/")}
+        >
           SkyFare
         </Typography>
 
         <Box sx={{ display: "flex", gap: 3 }}>
-          <Button sx={{ fontWeight: "bold" }} onClick={() => navigate("/Landing")}>Home</Button>
-          <Button sx={{ fontWeight: "bold" }} onClick={() => navigate("/book-flight")}>Book a Flight</Button>
+          <Button sx={{ fontWeight: "bold" }} onClick={() => navigate("/")}>
+            Home
+          </Button>
+          <Button
+            sx={{ fontWeight: "bold" }}
+            onClick={() => navigate("/book-flight")}
+          >
+            Book a Flight
+          </Button>
         </Box>
 
         <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
           <IconButton onClick={handleMenuOpen}>
             <AccountCircle sx={{ color: "#1f0648" }} />
           </IconButton>
-          <Typography sx={{ fontWeight: "bold", cursor: "pointer" }} onClick={handleMenuOpen}>
+          <Typography
+            sx={{ fontWeight: "bold", cursor: "pointer" }}
+            onClick={handleMenuOpen}
+          >
             {user ? `${user.nombre} ${user.apellido}` : "Usuario"}
           </Typography>
 

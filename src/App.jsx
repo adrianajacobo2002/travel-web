@@ -22,7 +22,7 @@ function App() {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <Router>
-          <NavbarWrapper /> {/* ✅ Navbar siempre visible y se actualiza con el estado */}
+          <NavbarWrapper />
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/login" element={<Login />} />
