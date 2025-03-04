@@ -2,9 +2,10 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { CssBaseline } from "@mui/material";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 
+
 import "./App.css";
 
-import Landing from "./components/pasajeroform/formulario";
+import Landing from "./pages/viajes/tipo";
 
 const theme = createTheme({
   typography: {
