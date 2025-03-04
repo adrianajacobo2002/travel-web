@@ -1,0 +1,44 @@
+/*-----------------------DatePicker--------------------------*/
+
+/* Personaliza el contenedor principal */
+.custom-datepicker {
+  background-color: white !important; /* Fondo blanco */
+  border-radius: 10px !important; /* Bordes redondeados */
+  color: #1a0841 !important; /* Color del texto */
+  border: none;
+  margin-top: 0px;
+}
+
+/* Modifica el icono del calendario */
+.MuiSvgIcon-root {
+  color: #1a0841 !important;
+  font-size: 40px !important; /* Hace el icono más grande */
+}
+
+/* Cambia el fondo del DatePicker cuando está abierto */
+.MuiPaper-root {
+  background-color: white !important;
+  border-radius: 10px !important;
+  border: #1a0841 !important;
+}
+
+/* Cambia el color de los días seleccionados */
+.MuiPickersDay-root.Mui-selected {
+  background-color: #1a0841 !important;
+  color: white !important;
+}
+
+/* Cambia el color de los días al pasar el mouse */
+.MuiPickersDay-root:hover {
+  background-color: #7488db !important;
+}
+
+/* Modifica el botón de "OK" en el selector */
+.MuiButtonBase-root {
+  color: #1a0841 !important;
+  font-weight: bold !important;
+}
+
+.MuiStack-root {
+  padding-top: 0px !important;
+}
