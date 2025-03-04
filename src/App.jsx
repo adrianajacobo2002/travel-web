@@ -4,12 +4,23 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 
 import "./App.css";
 
-
-
 import Landing from "./pages/Landing/Landing";
-import SelectedFlight from"./pages/SelectedFlight";
 
+//forms
+import Login from "./forms/Login/Login.jsx";
 
+//componentes
+import AccordionFlight from "./components/AccordionFlight.jsx";
+import PassengerForm from "./components/PassengerForm.jsx";
+import TicketSum from "./components/TicketSum.jsx";
+
+//pages
+import MyTickets from "./pages/MyTickets.jsx";
+import SelectedFlight from "./pages/SelectedFlight.jsx";
+import Payment from "./pages/Payment.jsx";
+import PurchaseSumary from "./pages/PurchaseSumary.jsx";
+
+import Seats from "./pages/seats.jsx";
 
 const theme = createTheme({
   typography: {
@@ -37,8 +48,20 @@ function App() {
         <Router>
           <Routes>
             <Route path="/" element={<Landing />} />
-            <Route path="SelectedFlight" element={<SelectedFlight />} />
+            {/* Rutas para forms */}
+            <Route path="/login" element={<Login />} />
 
+            {/* Rutas para componentes */}
+            <Route path="/accordion-flight" element={<AccordionFlight />} />
+            <Route path="/passenger-form" element={<PassengerForm />} />
+            <Route path="/ticket-sum" element={<TicketSum />} />
+
+            {/* Rutas para pages */}
+            <Route path="/my-tickets" element={<MyTickets />} />
+            <Route path="/selected-flight" element={<SelectedFlight />} />
+            <Route path="/payment" element={<Payment />} />
+            <Route path="/purchase-sumary" element={<PurchaseSumary />} />
+            <Route path="/seats" element={<Seats />} />
           </Routes>
         </Router>
       </ThemeProvider>
@@ -46,4 +69,4 @@ function App() {
   );
 }
 
-export default App; 
+export default App;

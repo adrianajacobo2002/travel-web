@@ -59,7 +59,7 @@ const Payment = () => {
       <Box
         sx={{
           backgroundColor: "#1f0648",
-          maxWidth: 600,
+          maxWidth: 1000,
           margin: "auto",
           mb: 4,
           p: 2,
