@@ -36,10 +36,14 @@ export default function MyTickets() {
           </Typography>
         </Grid>
 
-        {/* Fila inferior con dos columnas: filtros (izq) y tickets (der) */}
+        {/* Fila que contiene los dos "columnas": Filtros (izq) y Tickets (der) */}
         <Grid item xs={12}>
-          <Grid container spacing={2}>
-            {/* Columna izquierda (aprox. 30%) */}
+          <Grid
+            container
+            spacing={2}
+            alignItems="stretch"  // <-- hace que ambas columnas tengan la misma altura
+          >
+            {/* Columna izquierda (filtros) */}
             <Grid
               id="leftFilterGrid"
               name="leftFilterGrid"
@@ -55,6 +59,7 @@ export default function MyTickets() {
                   border: "1px solid white",
                   borderRadius: "8px",
                   p: 2,
+                  height: "100%", // <-- ocupa toda la altura disponible
                 }}
               >
                 <FormControl
@@ -108,7 +113,7 @@ export default function MyTickets() {
               </Card>
             </Grid>
 
-            {/* Columna derecha (aprox. 70%) */}
+            {/* Columna derecha (tickets) */}
             <Grid
               id="rightTicketsGrid"
               name="rightTicketsGrid"
@@ -116,7 +121,6 @@ export default function MyTickets() {
               xs={12}
               md={8}
             >
-              {/* Aquí irán los tickets (otro componente). */}
               <Box
                 id="ticketsContainer"
                 name="ticketsContainer"
@@ -126,6 +130,7 @@ export default function MyTickets() {
                   p: 2,
                   minHeight: "200px",
                   border: "1px solid white",
+                  height: "100%", // <-- ocupa toda la altura disponible
                 }}
               >
                 <Typography
@@ -136,11 +141,11 @@ export default function MyTickets() {
                 >
                   Aquí se mostrarán los boletos.
                 </Typography>
+                {/* Tu componente de tickets vendría aquí */}
               </Box>
             </Grid>
           </Grid>
         </Grid>
-        
       </Grid>
     </Box>
   );
